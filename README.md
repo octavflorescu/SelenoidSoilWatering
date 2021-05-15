@@ -1,5 +1,7 @@
 # SelenoidSoilWatering
 
+The main idea is that the Arduino reads a soil humidity sensor and decides if plant(s) need watering. If that is the case, Arduino should send a signal to the Tranzistor, which will trigger and enable the current flow towards the Valve. Once Valve is enabled, since it is a usually closed valve, it will open and let the water to flow, guided by gravity.
+
 <img src="820064F3-1420-4B56-9CCE-E00A49BECA52.jpeg" width="33%"> <img src="4B195FF3-3E5D-43E4-9C49-959739C4AF40.jpeg" width="33%">
 
 I guess mainly i have followed these two tutorials. maybe another one i cannot find anymore.
