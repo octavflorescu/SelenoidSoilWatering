@@ -3,7 +3,7 @@ const int valvePowerDigitalPin = 8;
 const int LED_PIN = 13;
 
 // Define our timer.
-const long WATERING_TIME = 20000; // in milliseconds
+const long WATERING_TIME = 40000; // in milliseconds
 const long WATERING_DELAY = WATERING_TIME/2; // in milliseconds
 long infiltration_delay = 0;
 
@@ -19,21 +19,22 @@ void setup() {
   infiltration_delay = 0;
   
   // Setup serial plotter.
-  Serial.begin(9600);
+//  Serial.begin(9600);
 }
 
 void loop() {
   int soilConductivity = analogRead(soilSensor);
+
+  // Take reading, send to plotter.
+//  Serial.println(soilConductivity);
+    
   // humid soil ~ < 400
-  if (infiltration_delay <= millis() && soilConductivity <= 400) {
+  if (infiltration_delay <= millis() && soilConductivity <= 450) {
     // Turn valve ON and wait a moment.
     digitalWrite(valvePowerDigitalPin, HIGH);
     digitalWrite(LED_PIN, HIGH);
 
     delay(WATERING_TIME);
-
-    // Take reading, send to plotter.
-    Serial.println(analogRead(soilSensor));
     
     // Turn valve OFF again and wait a moment for the water to infiltrate to the sensor
     digitalWrite(valvePowerDigitalPin, LOW);
