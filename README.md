@@ -13,7 +13,7 @@ https://chrisruppel.com/blog/arduino-soil-moisture-sensor/
 
 My Components:
 - Selenoid valve usually closed, similar to https://www.alibaba.com/product-detail/Plastic-solenoid-valve-for-water-dispenser_1699906875.html
-- WDLuino UNO
+- WDLduino UNO
 - Led
 - Diode
 - Transistor
